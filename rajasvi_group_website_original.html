@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasvi Group | Engineering, Construction, Marine & Fabrication</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            slate: '#1e293b',
+                            blue: '#0284c7',
+                            accent: '#2563eb',
+                            light: '#f8fafc',
+                            muted: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Outfit', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+
+                /* Hero Text Slider Effect */
+        .text-slider-container {
+            height: 1.3em;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .text-slider {
+            display: block;
+            animation: slideText 9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes slideText {
+            0%, 28% { transform: translateY(0%); }
+            33%, 61% { transform: translateY(-33.33%); }
+            66%, 95% { transform: translateY(-66.66%); }
+            100% { transform: translateY(0%); }
+        }
+
+        /* Glassmorphism Header */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Interactive Service Hover Cards */
+        .service-hover-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-hover-card .card-bg-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(1.08);
+            transition: opacity 0.5s ease, transform 0.6s ease;
+            filter: brightness(0.35);
+        }
+
+        .service-hover-card:hover .card-bg-image {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .service-hover-card .card-content {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s ease;
+        }
+
+        .service-hover-card:hover .card-content-title {
+            color: #ffffff !important;
+        }
+
+        .service-hover-card:hover .card-content-text {
+            color: #cbd5e1 !important;
+        }
+
+        .service-hover-card:hover .card-badge {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+            border-color: #3b82f6 !important;
+        }
+
+        /* Active Page View Navigation */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Toast notification */
+        #toast {
+            visibility: hidden;
+            min-width: 280px;
+            transform: translateY(100px);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        #toast.show {
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Top Announcement / Quick Contact Bar -->
+    <div class="bg-brand-navy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid font-bold fa-location-dot text-brand-blue mr-1.5"></i> Kakinada, AP, India &
+                    Middle East</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-blue mr-1.5"></i> Integrated
+                    Engineering & Execution</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+919666166559" class="hover:text-white transition"><i
+                        class="fa-solid fa-phone text-brand-blue mr-1"></i> +91 96661 66559</a>
+                <a href="mailto:rajasvi.ec@gmail.com" class="hover:text-white transition"><i
+                        class="fa-solid fa-envelope text-brand-blue mr-1"></i> rajasvi.ec@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Geometric RG Logo -->
+                <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 bg-brand-navy rounded-lg p-2 flex items-center justify-center shadow-md group-hover:bg-brand-accent transition duration-300">
+                        <!-- Precise SVG Geometric RG Logo matching brand specifications -->
+                        <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 25 H55 C65 25 72 32 72 40 C72 48 65 55 55 55 H20 V25 Z" stroke="currentColor"
+                                stroke-width="8" stroke-linecap="square" fill="none" />
+                            <path d="M40 55 L68 80" stroke="currentColor" stroke-width="9" stroke-linecap="square" />
+                            <path d="M80 35 V75 C80 82 72 85 60 85 H45 C35 85 25 78 25 65" stroke="currentColor"
+                                stroke-width="8" stroke-linecap="square" fill="none" />
+                            <path d="M60 60 H80" stroke="currentColor" stroke-width="8" stroke-linecap="square" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-heading font-extrabold text-2xl tracking-wider text-brand-navy leading-none">RAJASVI</span>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="h-[1px] w-3 bg-brand-blue"></span>
+                            <span class="text-[10px] font-bold tracking-[0.25em] text-slate-600 uppercase">GROUP</span>
+                            <span class="h-[1px] w-3 bg-brand-blue"></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <button onclick="navigateTo('home')" id="nav-home"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Home</button>
+                    <button onclick="navigateTo('about')" id="nav-about"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">About
+                        Us</button>
+                    <button onclick="navigateTo('business')" id="nav-business"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Our
+                        Business</button>
+                    <button onclick="navigateTo('services')" id="nav-services"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Services</button>
+                    <button onclick="navigateTo('projects')" id="nav-projects"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Projects</button>
+                    <button onclick="navigateTo('facilities')" id="nav-facilities"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Facilities</button>
+                    <button onclick="navigateTo('careers')" id="nav-careers"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Careers</button>
+                    <button onclick="navigateTo('contact')" id="nav-contact"
+                        class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-slate-100 transition">Contact</button>
+                </nav>
+
+                <!-- CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openModal('quoteModal')"
+                        class="hidden sm:inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-accent text-white font-semibold text-xs uppercase tracking-wider px-5 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <i class="fa-solid fa-paper-plane"></i> Discuss Project
+                    </button>
+
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+                        class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 text-xl focus:outline-none">
+                        <i class="fa-solid fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2">
+            <button onclick="navigateTo('home')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Home</button>
+            <button onclick="navigateTo('about')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">About
+                Us</button>
+            <button onclick="navigateTo('business')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Our
+                Business</button>
+            <button onclick="navigateTo('services')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Services</button>
+            <button onclick="navigateTo('projects')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Projects</button>
+            <button onclick="navigateTo('facilities')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Facilities
+                & Quality</button>
+            <button onclick="navigateTo('careers')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Careers</button>
+            <button onclick="navigateTo('contact')"
+                class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100">Contact</button>
+            <div class="pt-2">
+                <button onclick="openModal('quoteModal')"
+                    class="w-full text-center bg-brand-navy text-white font-semibold py-3 rounded-lg shadow">Discuss
+                    Your Project</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT VIEWS CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- ==================== PAGE 1: HOME ==================== -->
+        <section id="page-home" class="page-view active">
+
+            <!-- Hero Section with Full-Bleed High-Visibility Industrial Bokeh Background -->
+            <div class="relative bg-slate-950 min-h-[85vh] flex items-center overflow-hidden">
+
+                <!-- Full-Bleed Vivid Bokeh Industrial Background Image Spanning Left-to-Right -->
+                <div class="absolute inset-0 z-0 opacity-85 bg-cover bg-center filter blur-[3px] scale-105 brightness-90 transition-all duration-1000"
+                    style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+
+                <!-- Subtle Gradient & Bokeh Accent Overlays (Non-blocking, Image Remains Rich & Visible) -->
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/50 to-slate-950/30 z-0">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/60 z-0">
+                </div>
+
+                <!-- Custom Ambient Golden & Blue Bokeh Light Sparkles -->
+                <div
+                    class="absolute inset-0 z-0 opacity-50 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(37,99,235,0.4)_0%,transparent_50%),radial-gradient(circle_at_75%_65%,rgba(245,158,11,0.35)_0%,transparent_50%)] filter blur-2xl">
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 w-full">
+                    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+                        <!-- Left Column: Frosted Glass Panel for 100% Text Readability Over the Full Image -->
+                        <div
+                            class="lg:col-span-7 bg-slate-950/80 backdrop-blur-xl border border-white/15 p-6 sm:p-10 rounded-3xl shadow-2xl relative">
+                            <div
+                                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-xs font-bold uppercase tracking-widest mb-6 gsap-hero-badge">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span> Integrated
+                                Engineering Partner
+                            </div>
+
+                            <!-- GSAP Animated Dynamic Title with Zero Clipping & Generous Spacing -->
+                            <div
+                                class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white font-heading leading-tight mb-6 mt-1 py-1 gsap-hero-title">
+                                <div class="hero-title-container w-full overflow-hidden">
+                                    <span id="hero-sliding-text"
+                                        class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-brand-blue py-1">Emerging
+                                        to Conquer.</span>
+                                </div>
+                            </div>
+
+                            <p
+                                class="text-brand-blue font-bold text-base sm:text-lg uppercase tracking-wider mb-6 mt-2 gsap-hero-sub">
+                                Industrial | Infrastructure | Marine | Civil Construction
+                            </p>
+
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 gsap-hero-desc">
+                                Rajasvi Group is a multidisciplinary engineering and construction company delivering
+                                integrated solutions across structural steel fabrication, industrial infrastructure,
+                                piping systems, marine engineering, civil construction and skilled workforce solutions.
+                            </p>
+
+                            <div class="flex flex-wrap items-center gap-4 gsap-hero-btn">
+                                <button onclick="navigateTo('business')"
+                                    class="bg-brand-accent hover:bg-blue-600 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-blue-500/25 transition duration-300 flex items-center gap-2">
+                                    Explore Our Business <i class="fa-solid fa-arrow-right text-sm"></i>
+                                </button>
+                                <button onclick="navigateTo('contact')"
+                                    class="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md font-semibold px-6 py-3.5 rounded-xl transition duration-300">
+                                    Discuss Your Project
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 02 — THE COMPANY AT A GLANCE -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                        <div class="lg:col-span-6 space-y-6 gsap-reveal-header">
+                            <div class="inline-block text-brand-blue font-bold text-sm uppercase tracking-widest">
+                                The Company at a Glance
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy">
+                                Engineering Capability. Built Around Execution.
+                            </h2>
+                            <p class="text-slate-600 leading-relaxed">
+                                Rajasvi Group brings together engineering, fabrication, construction and manpower
+                                capabilities under one integrated platform.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Our experience spans industrial construction, structural steel fabrication, piping
+                                fabrication and erection, marine engineering, ship repair, civil infrastructure,
+                                protective coatings and industrial maintenance.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                From fabrication yards and workshops to project sites and marine environments, our teams
+                                are equipped to support clients through multiple stages of project execution.
+                            </p>
+
+                            <div class="pt-4">
+                                <button onclick="navigateTo('about')"
+                                    class="inline-flex items-center gap-2 text-brand-accent font-bold hover:underline">
+                                    Read Complete Corporate Story <i class="fa-solid fa-chevron-right text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Metric Badges Grid with Rolling Counter Data Attributes -->
+                        <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+                            <div
+                                class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition gsap-card-stagger">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold mb-4">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="text-3xl font-extrabold text-brand-navy font-heading"
+                                   >25+ Years</div>
+                                <div class="text-sm font-semibold text-slate-600 mt-1">Industry Experience</div>
+                            </div>
+
+                            <div
+                                class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition gsap-card-stagger">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold mb-4">
+                                    <i class="fa-solid fa-anchor"></i>
+                                </div>
+                                <div class="text-2xl font-extrabold text-brand-navy font-heading"
+                                   >30,000 Sq. Ft.</div>
+                                <div class="text-sm font-semibold text-slate-600 mt-1">Waterfront Fabrication Facility
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition gsap-card-stagger">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold mb-4">
+                                    <i class="fa-solid fa-industry"></i>
+                                </div>
+                                <div class="text-3xl font-extrabold text-brand-navy font-heading"
+                                   >60–100 MT</div>
+                                <div class="text-sm font-semibold text-slate-600 mt-1">Structural Steel / Month</div>
+                            </div>
+
+                            <div
+                                class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition gsap-card-stagger">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold mb-4">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <div class="text-3xl font-extrabold text-brand-navy font-heading"
+                                   >2,500 Inch-Dia</div>
+                                <div class="text-sm font-semibold text-slate-600 mt-1">Piping Fabrication / Month</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 03 — OUR BUSINESS (Dropdown & Tab Interactive Feature) -->
+            <section class="py-20 bg-slate-100 border-y border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-brand-blue font-bold text-sm uppercase tracking-widest">Our Business</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mt-2">Where Engineering Meets
+                            Execution.</h2>
+                        <p class="text-slate-600 mt-4">
+                            Rajasvi Group operates across interconnected engineering and construction sectors, enabling
+                            clients to access multiple capabilities through a single project partner.
+                        </p>
+                    </div>
+
+                    <!-- Creative Dropdown Feature Selector for Mobile & Tab Buttons for Desktop -->
+                    <div class="max-w-md mx-auto mb-8 block sm:hidden">
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Select
+                            Sector View:</label>
+                        <select id="businessDropdown" onchange="switchHomeBusinessTab(this.value)"
+                            class="w-full bg-white border border-slate-300 rounded-xl p-3.5 text-brand-navy font-bold shadow-sm focus:ring-2 focus:ring-brand-accent">
+                            <option value="ind">Industrial & Infrastructure</option>
+                            <option value="mar">Marine & Shipbuilding</option>
+                            <option value="civ">Civil Construction</option>
+                            <option value="eng">Engineering & Fabrication</option>
+                        </select>
+                    </div>
+
+                    <div class="hidden sm:flex justify-center gap-3 mb-10">
+                        <button onclick="switchHomeBusinessTab('ind')" id="tab-btn-ind"
+                            class="biz-tab-btn active px-6 py-3 rounded-xl font-bold text-sm transition bg-brand-navy text-white shadow">Industrial
+                            & Infrastructure</button>
+                        <button onclick="switchHomeBusinessTab('mar')" id="tab-btn-mar"
+                            class="biz-tab-btn px-6 py-3 rounded-xl font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200">Marine
+                            & Shipbuilding</button>
+                        <button onclick="switchHomeBusinessTab('civ')" id="tab-btn-civ"
+                            class="biz-tab-btn px-6 py-3 rounded-xl font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200">Civil
+                            Construction</button>
+                        <button onclick="switchHomeBusinessTab('eng')" id="tab-btn-eng"
+                            class="biz-tab-btn px-6 py-3 rounded-xl font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200">Engineering
+                            & Fabrication</button>
+                    </div>
+
+                    <!-- Dynamic Card Content Container -->
+                    <div
+                        class="bg-white p-8 sm:p-12 rounded-2xl border border-slate-200 shadow-lg relative min-h-[260px] flex items-center">
+
+                        <div id="biz-content-ind" class="home-biz-content w-full">
+                            <div class="grid md:grid-cols-12 gap-8 items-center">
+                                <div class="md:col-span-8 space-y-4">
+                                    <div
+                                        class="inline-block px-3 py-1 bg-blue-50 text-brand-accent font-bold text-xs uppercase rounded-md">
+                                        Sector Profile</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy">INDUSTRIAL & INFRASTRUCTURE</h3>
+                                    <p class="text-slate-600 text-lg leading-relaxed">
+                                        Industrial fabrication, infrastructure development, structural steel, piping,
+                                        installation and maintenance solutions.
+                                    </p>
+                                    <button onclick="navigateTo('business')"
+                                        class="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-3 transition">
+                                        Explore Industrial & Infrastructure →
+                                    </button>
+                                </div>
+                                <div class="md:col-span-4">
+                                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80"
+                                        alt="Industrial" class="rounded-xl object-cover h-48 w-full shadow">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="biz-content-mar" class="home-biz-content hidden w-full">
+                            <div class="grid md:grid-cols-12 gap-8 items-center">
+                                <div class="md:col-span-8 space-y-4">
+                                    <div
+                                        class="inline-block px-3 py-1 bg-blue-50 text-brand-accent font-bold text-xs uppercase rounded-md">
+                                        Sector Profile</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy">MARINE & SHIPBUILDING</h3>
+                                    <p class="text-slate-600 text-lg leading-relaxed">
+                                        Ship repair, shipbuilding support, marine fabrication, mechanical works, piping
+                                        and maintenance services.
+                                    </p>
+                                    <button onclick="navigateTo('business')"
+                                        class="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-3 transition">
+                                        Explore Marine →
+                                    </button>
+                                </div>
+                                <div class="md:col-span-4">
+                                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+                                        alt="Marine" class="rounded-xl object-cover h-48 w-full shadow">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="biz-content-civ" class="home-biz-content hidden w-full">
+                            <div class="grid md:grid-cols-12 gap-8 items-center">
+                                <div class="md:col-span-8 space-y-4">
+                                    <div
+                                        class="inline-block px-3 py-1 bg-blue-50 text-brand-accent font-bold text-xs uppercase rounded-md">
+                                        Sector Profile</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy">CIVIL CONSTRUCTION</h3>
+                                    <p class="text-slate-600 text-lg leading-relaxed">
+                                        Civil engineering and construction solutions for residential, commercial,
+                                        institutional and government infrastructure.
+                                    </p>
+                                    <button onclick="navigateTo('business')"
+                                        class="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-3 transition">
+                                        Explore Civil Construction →
+                                    </button>
+                                </div>
+                                <div class="md:col-span-4">
+                                    <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80"
+                                        alt="Civil" class="rounded-xl object-cover h-48 w-full shadow">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="biz-content-eng" class="home-biz-content hidden w-full">
+                            <div class="grid md:grid-cols-12 gap-8 items-center">
+                                <div class="md:col-span-8 space-y-4">
+                                    <div
+                                        class="inline-block px-3 py-1 bg-blue-50 text-brand-accent font-bold text-xs uppercase rounded-md">
+                                        Sector Profile</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy">ENGINEERING & FABRICATION</h3>
+                                    <p class="text-slate-600 text-lg leading-relaxed">
+                                        Precision structural steel and piping fabrication, welding, assembly and
+                                        erection.
+                                    </p>
+                                    <button onclick="navigateTo('business')"
+                                        class="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-3 transition">
+                                        Explore Engineering & Fabrication →
+                                    </button>
+                                </div>
+                                <div class="md:col-span-4">
+                                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+                                        alt="Engineering" class="rounded-xl object-cover h-48 w-full shadow">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 04 — PROJECT DELIVERY -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-brand-blue font-bold text-sm uppercase tracking-widest">Project
+                            Delivery</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mt-2">From Engineering to Execution.
+                        </h2>
+                        <p class="text-slate-600 mt-4">
+                            Our integrated capabilities allow Rajasvi Group to support projects through multiple stages
+                            of the execution cycle.
+                        </p>
+                    </div>
+
+                    <!-- Step Pipeline Visual -->
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-12">
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 01</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">ENGINEERING</div>
+                        </div>
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 02</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">PROCUREMENT</div>
+                        </div>
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 03</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">FABRICATION</div>
+                        </div>
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 04</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">INSTALLATION</div>
+                        </div>
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 05</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">INSPECTION</div>
+                        </div>
+                        <div
+                            class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center shadow-sm hover:border-brand-accent transition">
+                            <div class="text-xs font-bold text-brand-blue uppercase">Step 06</div>
+                            <div class="text-sm font-extrabold text-brand-navy mt-1">HANDOVER</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-blue-400">Integrated Turnkey Execution</h3>
+                            <p class="text-slate-300 max-w-3xl leading-relaxed">
+                                We coordinate technical requirements, materials, fabrication, site activities and
+                                project execution to minimise interfaces and maintain control over quality, safety, cost
+                                and schedule.
+                            </p>
+                        </div>
+                        <button onclick="navigateTo('facilities')"
+                            class="whitespace-nowrap bg-brand-accent hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl transition">
+                            Review Capabilities & Quality
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 05 — FEATURED PROJECTS -->
+            <section class="py-20 bg-slate-50 border-t border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-wrap justify-between items-end mb-12">
+                        <div>
+                            <span class="text-brand-blue font-bold text-sm uppercase tracking-widest">Featured
+                                Projects</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mt-2">Experience Delivered on the
+                                Ground.</h2>
+                        </div>
+                        <button onclick="navigateTo('projects')"
+                            class="hidden sm:inline-flex items-center gap-2 text-brand-accent font-bold hover:underline">
+                            View All Projects →
+                        </button>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+
+                        <!-- Project Card 1 -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=600&q=80"
+                                    alt="Amaravati" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <span
+                                        class="text-xs font-bold uppercase tracking-wider text-brand-blue">Infrastructure
+                                        Development</span>
+                                    <h3 class="text-xl font-bold text-brand-navy mt-1 mb-3">Amaravati Capital Region
+                                        Development</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        Engineering and infrastructure support works contributing to the development of
+                                        Amaravati, Andhra Pradesh.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-6 pt-0 border-t border-slate-100 mt-4">
+                                <span class="text-xs font-semibold text-slate-500">Location: Andhra Pradesh</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
+                                    alt="SBI" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <span
+                                        class="text-xs font-bold uppercase tracking-wider text-brand-blue">Institutional
+                                        Infrastructure</span>
+                                    <h3 class="text-xl font-bold text-brand-navy mt-1 mb-2">SBI Andhra Pradesh State
+                                        Headquarters</h3>
+                                    <p class="text-xs text-brand-accent font-semibold mb-3">Project Partner: Varendra
+                                        Constructions Limited</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        Fabrication and installation of accommodation units and modular staff cabins.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-6 pt-0 border-t border-slate-100 mt-4">
+                                <span class="text-xs font-semibold text-slate-500">Modular & Structural
+                                    Fabrication</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80"
+                                    alt="Residential" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">Government
+                                        Infrastructure</span>
+                                    <h3 class="text-xl font-bold text-brand-navy mt-1 mb-2">MLA & MP Residential
+                                        Quarters</h3>
+                                    <p class="text-xs text-brand-accent font-semibold mb-3">Project Partner: NCC Pvt.
+                                        Ltd.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        Aluminium and window fabrication works for residential government quarters.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-6 pt-0 border-t border-slate-100 mt-4">
+                                <span class="text-xs font-semibold text-slate-500">Aluminium & Glass Fabrication</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8 text-center sm:hidden">
+                        <button onclick="navigateTo('projects')"
+                            class="bg-white border border-slate-300 text-brand-navy font-bold px-6 py-3 rounded-xl shadow-sm">
+                            View All Projects →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 06 — WHY RAJASVI -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-brand-blue font-bold text-sm uppercase tracking-widest">Why Rajasvi</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mt-2">Built on Experience. Driven by
+                            Performance.</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-sitemap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Integrated Capabilities</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Engineering, fabrication, construction, marine services and workforce solutions under
+                                one organisation.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Experienced Teams</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                More than 25 years of combined industry expertise across engineering, fabrication,
+                                marine and construction.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Fabrication Infrastructure</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Dedicated workshop and waterfront fabrication facilities supporting structural steel and
+                                piping requirements.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Skilled Workforce</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Experienced welders, fabricators, fitters, riggers, electricians, painters, technicians
+                                and supervisors.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Safety & Quality</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Structured processes focused on safe working practices, quality control and project
+                                compliance.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition">
+                            <div
+                                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">India & Middle East</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Capabilities and business operations supporting clients across India and the Gulf
+                                region.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL HOME CTA -->
+            <section class="py-20 bg-brand-navy text-white relative overflow-hidden">
+                <div class="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-6">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-heading">Let's Build What's Next.</h2>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Whether you require structural steel fabrication, piping fabrication, industrial construction,
+                        marine engineering, civil infrastructure or skilled manpower, Rajasvi Group is ready to support
+                        your next project.
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="navigateTo('contact')"
+                            class="bg-brand-accent hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition duration-300 inline-flex items-center gap-2">
+                            Start a Conversation <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 2: ABOUT US ==================== -->
+        <section id="page-about" class="page-view">
+
+            <!-- Page Header -->
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Corporate Profile</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">ABOUT RAJASVI GROUP</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Engineering Experience. Built
+                        Into Every Project.</p>
+                </div>
+            </div>
+
+            <!-- About Intro -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <p class="text-slate-700 text-lg leading-relaxed">
+                                Rajasvi Group is an emerging engineering and construction company providing integrated
+                                project solutions across industrial, infrastructure, marine and civil construction
+                                sectors.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Established in 2021, the Group combines the capabilities of an evolving organisation
+                                with more than 30 years of practical industry experience across engineering,
+                                fabrication, construction, marine operations and workforce management.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Our capabilities extend from structural steel fabrication and piping systems to marine
+                                engineering, civil construction, industrial maintenance and manpower deployment.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                With operations and business interests across India and the Middle East, Rajasvi Group
+                                is building its position as a dependable project execution partner for industrial,
+                                infrastructure, government and marine clients.
+                            </p>
+                        </div>
+
+                        <div
+                            class="lg:col-span-5 bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                            <h3 class="text-xl font-bold text-brand-navy border-b border-slate-200 pb-3">At a Glance
+                            </h3>
+                            <div class="space-y-4 text-sm text-slate-700">
+                                <div class="flex items-center gap-3"><i
+                                        class="fa-solid fa-calendar-check text-brand-blue text-lg"></i>
+                                    <span><strong>Established:</strong> 2021</span>
+                                </div>
+                                <div class="flex items-center gap-3"><i
+                                        class="fa-solid fa-briefcase text-brand-blue text-lg"></i>
+                                    <span><strong>Combined Experience:</strong> 30+ Years</span>
+                                </div>
+                                <div class="flex items-center gap-3"><i
+                                        class="fa-solid fa-globe text-brand-blue text-lg"></i> <span><strong>Geographic
+                                            Scope:</strong> India & Middle East</span></div>
+                                <div class="flex items-center gap-3"><i
+                                        class="fa-solid fa-list-check text-brand-blue text-lg"></i>
+                                    <span><strong>Sectors:</strong> Industrial, Marine, Civil, Steel, Piping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUR JOURNEY (Timeline) -->
+            <section class="py-16 bg-slate-100 border-y border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Growth Pathway</span>
+                        <h2 class="text-3xl font-bold text-brand-navy mt-1">OUR JOURNEY</h2>
+                        <p class="text-slate-600 mt-2">Experience That Became Rajasvi.</p>
+                    </div>
+
+                    <p class="text-slate-700 text-center max-w-4xl mx-auto mb-10">
+                        The expertise behind Rajasvi Group has been built through decades of involvement in engineering,
+                        fabrication, construction and marine projects. In 2021, this experience was brought together
+                        under the Rajasvi Group platform with a clear objective: To build a professionally managed
+                        engineering organisation capable of delivering complex projects with greater integration,
+                        efficiency and accountability.
+                    </p>
+
+                    <!-- Horizontal Journey Progression Cards -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                01</div>
+                            <div class="text-xs font-bold text-brand-navy">Structural Engineering</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                02</div>
+                            <div class="text-xs font-bold text-brand-navy">Steel Fabrication</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                03</div>
+                            <div class="text-xs font-bold text-brand-navy">Piping Systems</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                04</div>
+                            <div class="text-xs font-bold text-brand-navy">Marine Engineering</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                05</div>
+                            <div class="text-xs font-bold text-brand-navy">Civil Construction</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                06</div>
+                            <div class="text-xs font-bold text-brand-navy">Industrial Maintenance</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <div
+                                class="w-8 h-8 bg-blue-100 text-brand-accent rounded-full flex items-center justify-center font-bold mx-auto mb-2 text-xs">
+                                07</div>
+                            <div class="text-xs font-bold text-brand-navy">Workforce Solutions</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUR PURPOSE, VISION & MISSION -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+                    <!-- Purpose -->
+                    <div>
+                        <div class="text-center max-w-3xl mx-auto mb-10">
+                            <h2 class="text-3xl font-bold text-brand-navy">OUR PURPOSE</h2>
+                            <p class="text-slate-600 mt-2">Building Capability. Creating Value.</p>
+                            <p class="text-slate-600 text-sm mt-3">
+                                Our purpose is to deliver reliable engineering and construction solutions that create
+                                long-term value for clients, employees and project stakeholders. We focus on four
+                                fundamental principles:
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                                <h3 class="font-bold text-brand-navy text-lg mb-2">Capability</h3>
+                                <p class="text-slate-600 text-sm">Developing technical, manufacturing and project
+                                    execution capabilities.</p>
+                            </div>
+                            <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                                <h3 class="font-bold text-brand-navy text-lg mb-2">Reliability</h3>
+                                <p class="text-slate-600 text-sm">Building long-term relationships through dependable
+                                    delivery.</p>
+                            </div>
+                            <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                                <h3 class="font-bold text-brand-navy text-lg mb-2">Responsibility</h3>
+                                <p class="text-slate-600 text-sm">Maintaining strong standards of safety, quality and
+                                    professional conduct.</p>
+                            </div>
+                            <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                                <h3 class="font-bold text-brand-navy text-lg mb-2">Growth</h3>
+                                <p class="text-slate-600 text-sm">Expanding our capabilities and geographical reach
+                                    across India and international markets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision & Mission -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-brand-navy text-white rounded-2xl shadow-lg space-y-4">
+                            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Aspiration</span>
+                            <h3 class="text-2xl font-bold font-heading">OUR VISION</h3>
+                            <p class="text-slate-300 leading-relaxed text-lg">
+                                "To become a trusted engineering, fabrication and construction partner across India and
+                                the Middle East."
+                            </p>
+                        </div>
+
+                        <div class="p-8 bg-brand-navy text-white rounded-2xl shadow-lg space-y-4">
+                            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Execution
+                                Standard</span>
+                            <h3 class="text-2xl font-bold font-heading">OUR MISSION</h3>
+                            <p class="text-slate-300 leading-relaxed text-lg">
+                                "To deliver safe, efficient, technically sound and cost-effective engineering solutions
+                                through experienced people, capable infrastructure and disciplined project execution."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- OUR VALUES -->
+                    <div>
+                        <div class="text-center max-w-3xl mx-auto mb-10">
+                            <h2 class="text-3xl font-bold text-brand-navy">OUR VALUES</h2>
+                            <p class="text-slate-600 mt-2">The Principles Guiding Every Decision.</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">INTEGRITY</h4>
+                                <p class="text-slate-600 text-sm">We operate with transparency, accountability and
+                                    professional responsibility.</p>
+                            </div>
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">EXCELLENCE</h4>
+                                <p class="text-slate-600 text-sm">We continuously improve the way we engineer, fabricate
+                                    and execute projects.</p>
+                            </div>
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">SAFETY</h4>
+                                <p class="text-slate-600 text-sm">We believe every project must be executed with the
+                                    safety of people and assets as a priority.</p>
+                            </div>
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">RELIABILITY</h4>
+                                <p class="text-slate-600 text-sm">Our commitments form the foundation of our client
+                                    relationships.</p>
+                            </div>
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">COLLABORATION</h4>
+                                <p class="text-slate-600 text-sm">Engineering excellence depends on effective
+                                    collaboration between people, disciplines and partners.</p>
+                            </div>
+                            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-brand-blue mb-1">CONTINUOUS IMPROVEMENT</h4>
+                                <p class="text-slate-600 text-sm">We look for better ways to improve productivity,
+                                    quality and project outcomes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 3: OUR BUSINESS ==================== -->
+        <section id="page-business" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Industry Sectors</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">OUR BUSINESS</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Integrated Capabilities Across
+                        Critical Industries.</p>
+                </div>
+            </div>
+
+            <section class="py-16 bg-white space-y-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+                    <!-- 01 INDUSTRIAL & INFRASTRUCTURE -->
+                    <div
+                        class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-2xl font-extrabold text-brand-blue font-heading">01</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy">INDUSTRIAL & INFRASTRUCTURE</h2>
+                            <p class="text-slate-700 font-semibold">Engineering the Infrastructure Behind Industry.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Rajasvi Group supports industrial and infrastructure projects with capabilities spanning
+                                structural steel fabrication, industrial construction, piping systems, mechanical
+                                installation, maintenance and project manpower. Our teams can support projects from
+                                fabrication and pre-assembly through transportation, erection and site installation.
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-2">Key Capabilities:</h4>
+                                    <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                                        <li>Industrial structural fabrication</li>
+                                        <li>Structural steel erection</li>
+                                        <li>Industrial piping & Equipment support</li>
+                                        <li>Fabrication and installation</li>
+                                        <li>Industrial maintenance</li>
+                                        <li>Infrastructure & Site execution</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy text-sm mb-2">Target Industries:</h4>
+                                    <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                                        <li>Industrial facilities & Manufacturing</li>
+                                        <li>Infrastructure & Public projects</li>
+                                        <li>Government developments</li>
+                                        <li>Commercial developments</li>
+                                        <li>Marine-linked infrastructure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=800&q=80"
+                                alt="Industrial" class="rounded-xl object-cover h-full min-h-[300px] w-full shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- 02 MARINE & SHIPBUILDING -->
+                    <div
+                        class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200">
+                        <div class="lg:col-span-5 order-2 lg:order-1">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                                alt="Marine" class="rounded-xl object-cover h-full min-h-[300px] w-full shadow-md">
+                        </div>
+                        <div class="lg:col-span-7 space-y-4 order-1 lg:order-2">
+                            <span class="text-2xl font-extrabold text-brand-blue font-heading">02</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy">MARINE & SHIPBUILDING</h2>
+                            <p class="text-slate-700 font-semibold">Engineering for Demanding Marine Environments.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Our marine capabilities support shipyards, marine contractors and vessel-related
+                                projects through fabrication, repair, maintenance and mechanical services.
+                            </p>
+                            <div class="pt-2">
+                                <h4 class="font-bold text-brand-navy text-sm mb-2">Capabilities:</h4>
+                                <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Ship repair</span>
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Shipbuilding
+                                        support</span>
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Marine structural
+                                        fabrication</span>
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Piping
+                                        fabrication</span>
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Mechanical works</span>
+                                    <span class="p-2 bg-white rounded border border-slate-200"><i
+                                            class="fa-solid fa-check text-brand-blue mr-1"></i> Maintenance &
+                                        Welding</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-brand-accent font-semibold pt-2">
+                                * Our waterfront fabrication infrastructure provides an operational advantage for
+                                projects requiring marine access and fabrication capability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 03 CIVIL CONSTRUCTION -->
+                    <div
+                        class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-2xl font-extrabold text-brand-blue font-heading">03</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy">CIVIL CONSTRUCTION</h2>
+                            <p class="text-slate-700 font-semibold">Building Infrastructure That Lasts.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Rajasvi Group undertakes civil construction and infrastructure works for residential,
+                                commercial, institutional and government projects. Our construction capabilities include
+                                structural works, fabrication integration, finishing-related works and project support.
+                            </p>
+                            <div class="pt-2">
+                                <h4 class="font-bold text-brand-navy text-sm mb-2">Project Sectors:</h4>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Government
+                                        infrastructure</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Residential
+                                        developments</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Commercial
+                                        buildings</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Institutional
+                                        facilities</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Industrial
+                                        infrastructure</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white border rounded-lg font-medium text-slate-700">Public-sector
+                                        projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80"
+                                alt="Civil" class="rounded-xl object-cover h-full min-h-[280px] w-full shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- 04 ENGINEERING & FABRICATION -->
+                    <div
+                        class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200">
+                        <div class="lg:col-span-5 order-2 lg:order-1">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+                                alt="Fabrication" class="rounded-xl object-cover h-full min-h-[280px] w-full shadow-md">
+                        </div>
+                        <div class="lg:col-span-7 space-y-4 order-1 lg:order-2">
+                            <span class="text-2xl font-extrabold text-brand-blue font-heading">04</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy">ENGINEERING & FABRICATION</h2>
+                            <p class="text-slate-700 font-semibold">Precision Fabrication. Controlled Execution.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Our engineering and fabrication capabilities form a core part of Rajasvi Group's project
+                                delivery model. We support clients with structural steel fabrication, pipe fabrication,
+                                welding, assembly, erection and installation.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-navy">
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Structural steel</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Pipe spools</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Steel assemblies</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Modular structures</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Custom fabrication</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Welding & Assembly</span>
+                                <span class="px-3 py-1.5 bg-blue-100 rounded-md">Erection & Site Installation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 05 WORKFORCE SOLUTIONS -->
+                    <div class="bg-brand-navy text-white p-8 sm:p-12 rounded-2xl shadow-xl">
+                        <span class="text-2xl font-extrabold text-brand-blue font-heading">05</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold mt-1 mb-2">WORKFORCE SOLUTIONS</h2>
+                        <p class="text-blue-300 font-semibold mb-4">Skilled People. Project-Ready Teams.</p>
+                        <p class="text-slate-300 text-sm max-w-3xl leading-relaxed mb-6">
+                            Rajasvi Group provides skilled and semi-skilled workforce solutions for engineering,
+                            construction, industrial and marine projects. Our workforce solutions are designed to
+                            support both short-term project requirements and long-duration manpower deployment.
+                        </p>
+
+                        <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Workforce Categories
+                            Deployment:</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-center">
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Welders</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Fabricators</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Pipe Fitters</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Mechanical Fitters</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Riggers</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Electricians</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Painters</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Technicians</div>
+                            <div
+                                class="bg-slate-800 p-3 rounded-lg border border-slate-700 font-bold text-xs text-slate-200">
+                                Supervisors</div>
+                            <div class="bg-brand-accent p-3 rounded-lg font-bold text-xs text-white">Project Teams</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 4: SERVICES ==================== -->
+        <section id="page-services" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Specialised
+                        Capabilities</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">ENGINEERING & INDUSTRIAL SERVICES
+                    </h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Complete Project Support From
+                        Fabrication to Installation.</p>
+                    <p class="text-slate-400 text-xs mt-2 italic"><i class="fa-solid fa-hand-pointer mr-1"></i> Hover
+                        over or tap any card below to unveil dynamic background image and detailed scope.</p>
+                </div>
+            </div>
+
+            <!-- Interactive Hover Image Cards Grid -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- Service Card 1 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Fabrication & Erection
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    STRUCTURAL STEEL FABRICATION
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Structural steel fabrication and erection services covering material preparation,
+                                    cutting, fit-up, welding, assembly, surface preparation and site erection.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <div class="text-xs text-slate-500 group-hover:text-slate-300 space-y-1">
+                                    <p>• Industrial buildings & platforms</p>
+                                    <p>• Steel assemblies & modular structures</p>
+                                    <p>• Repair, modification & erection</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Industrial Piping
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    PIPING FABRICATION & ERECTION
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Piping fabrication and installation services for industrial and marine applications
+                                    covering pipe cutting, fit-up, welding, spool fabrication, and site erection.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <p class="text-xs font-bold text-brand-blue group-hover:text-blue-300">
+                                    Capacity: 2,500 Inch-Dia Pipe Fabrication / Month
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Civil Infrastructure
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    CIVIL CONSTRUCTION
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Civil engineering and construction works across government, commercial, residential,
+                                    institutional and infrastructure projects.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <div class="text-xs text-slate-500 group-hover:text-slate-300 space-y-1">
+                                    <p>• Structural works & site development</p>
+                                    <p>• Government & commercial developments</p>
+                                    <p>• Project support works</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 4 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-anchor"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Marine Services
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    MARINE ENGINEERING
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Ship repair, shipbuilding support, marine fabrication, structural repair, mechanical
+                                    works, piping, and surface preparation.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <div class="text-xs text-slate-500 group-hover:text-slate-300">
+                                    Support for shipyards and offshore marine assets.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 5 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-fill-drip"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Corrosion Protection
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    SURFACE PREPARATION & COATINGS
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Abrasive blasting, surface preparation, industrial painting, epoxy coating,
+                                    protective coatings, and marine coating systems.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <div class="text-xs text-slate-500 group-hover:text-slate-300">
+                                    Extending service life of steel structures & assets.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 6 -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 flex flex-col justify-between min-h-[380px] group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80');">
+                            </div>
+
+                            <div class="card-content">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4 font-bold border border-blue-100 group-hover:bg-brand-accent group-hover:text-white transition">
+                                    <i class="fa-solid fa-wrench"></i>
+                                </div>
+                                <span
+                                    class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-3 transition">
+                                    Asset Support
+                                </span>
+                                <h3 class="card-content-title text-2xl font-bold text-brand-navy mb-3">
+                                    INDUSTRIAL MAINTENANCE
+                                </h3>
+                                <p class="card-content-text text-slate-600 text-sm leading-relaxed mb-4">
+                                    Structural maintenance, piping maintenance, mechanical support, welding repairs,
+                                    fabrication modifications, and marine maintenance.
+                                </p>
+                            </div>
+
+                            <div class="card-content border-t border-slate-100 group-hover:border-slate-700 pt-4 mt-2">
+                                <div class="text-xs text-slate-500 group-hover:text-slate-300">
+                                    Supporting assets beyond project completion.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 7 (Full Span) -->
+                        <div
+                            class="service-hover-card rounded-2xl p-8 shadow-sm hover:shadow-2xl transition duration-500 md:col-span-2 lg:col-span-3 group">
+                            <div class="card-bg-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80');">
+                            </div>
+
+                            <div
+                                class="card-content flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                                <div>
+                                    <span
+                                        class="card-badge inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-2 transition">
+                                        Manpower Deployment
+                                    </span>
+                                    <h3 class="card-content-title text-2xl font-bold text-brand-navy">
+                                        INDUSTRIAL MANPOWER SOLUTIONS
+                                    </h3>
+                                    <p class="card-content-text text-slate-600 text-sm max-w-2xl mt-2">
+                                        Providing trained and experienced manpower for industrial, construction,
+                                        fabrication and marine requirements.
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="card-content flex flex-wrap gap-2 text-xs font-bold text-slate-800 group-hover:text-white">
+                                    <span
+                                        class="px-3 py-2 bg-slate-100 group-hover:bg-brand-accent/80 rounded-lg">Skilled
+                                        Labour</span>
+                                    <span
+                                        class="px-3 py-2 bg-slate-100 group-hover:bg-brand-accent/80 rounded-lg">Technical
+                                        Personnel</span>
+                                    <span
+                                        class="px-3 py-2 bg-slate-100 group-hover:bg-brand-accent/80 rounded-lg">Supervisors</span>
+                                    <span
+                                        class="px-3 py-2 bg-slate-100 group-hover:bg-brand-accent/80 rounded-lg">Fabrication
+                                        Teams</span>
+                                    <span class="px-3 py-2 bg-slate-100 group-hover:bg-brand-accent/80 rounded-lg">Site
+                                        Teams</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 5: PROJECTS ==================== -->
+        <section id="page-projects" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Case Studies</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">PROJECTS</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Engineering Delivered.
+                        Performance Proven.</p>
+                </div>
+            </div>
+
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                    <p class="text-slate-600 text-base max-w-3xl">
+                        Rajasvi Group's project experience spans infrastructure development, government construction,
+                        structural fabrication, modular structures, industrial fabrication and marine engineering.
+                    </p>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+
+                        <!-- Project Case Study 1 -->
+                        <div
+                            class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80"
+                                alt="Amaravati" class="w-full h-56 object-cover">
+                            <div class="p-8 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-brand-blue uppercase tracking-wider">Infrastructure
+                                            Development</span>
+                                        <h3 class="text-2xl font-bold text-brand-navy">AMARAVATI CAPITAL REGION
+                                            DEVELOPMENT</h3>
+                                        <p class="text-xs text-slate-500">Location: Andhra Pradesh</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Rajasvi Group has undertaken engineering and infrastructure support works
+                                    contributing to the ongoing development of Amaravati, the Capital City of Andhra
+                                    Pradesh.
+                                </p>
+                                <div>
+                                    <h4 class="font-bold text-xs text-brand-navy uppercase mb-2">Scope of Work:</h4>
+                                    <div class="flex flex-wrap gap-2 text-xs">
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Engineering
+                                            support</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Infrastructure
+                                            works</span>
+                                        <span
+                                            class="px-2.5 py-1 bg-white border rounded text-slate-700">Fabrication</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Site
+                                            execution</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Case Study 2 -->
+                        <div
+                            class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                                alt="SBI" class="w-full h-56 object-cover">
+                            <div class="p-8 space-y-4">
+                                <div>
+                                    <span
+                                        class="text-xs font-bold text-brand-blue uppercase tracking-wider">Institutional
+                                        Infrastructure</span>
+                                    <h3 class="text-2xl font-bold text-brand-navy">SBI ANDHRA PRADESH STATE HEADQUARTERS
+                                    </h3>
+                                    <p class="text-xs font-bold text-brand-accent mt-1">Project Partner: Varendra
+                                        Constructions Limited</p>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Rajasvi Group executed fabrication and installation works involving accommodation
+                                    units and modular staff cabins for the SBI Andhra Pradesh State Headquarters
+                                    project.
+                                </p>
+                                <div>
+                                    <h4 class="font-bold text-xs text-brand-navy uppercase mb-2">Scope of Work:</h4>
+                                    <div class="flex flex-wrap gap-2 text-xs">
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Modular
+                                            fabrication</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Structural
+                                            fabrication</span>
+                                        <span
+                                            class="px-2.5 py-1 bg-white border rounded text-slate-700">Installation</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Site
+                                            execution</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Case Study 3 -->
+                        <div
+                            class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80"
+                                alt="MLA MP Quarters" class="w-full h-56 object-cover">
+                            <div class="p-8 space-y-4">
+                                <div>
+                                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Government
+                                        Infrastructure</span>
+                                    <h3 class="text-2xl font-bold text-brand-navy">MLA & MP RESIDENTIAL QUARTERS</h3>
+                                    <p class="text-xs font-bold text-brand-accent mt-1">Project Partner: NCC Pvt. Ltd.
+                                    </p>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Rajasvi Group undertook aluminium and window fabrication works for residential
+                                    quarters developed for Members of Legislative Assembly and Parliament.
+                                </p>
+                                <div>
+                                    <h4 class="font-bold text-xs text-brand-navy uppercase mb-2">Scope of Work:</h4>
+                                    <div class="flex flex-wrap gap-2 text-xs">
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Aluminium
+                                            fabrication</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Window
+                                            fabrication</span>
+                                        <span
+                                            class="px-2.5 py-1 bg-white border rounded text-slate-700">Installation</span>
+                                        <span class="px-2.5 py-1 bg-white border rounded text-slate-700">Project
+                                            coordination</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Case Study 4 -->
+                        <div
+                            class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                                alt="Industrial Marine" class="w-full h-56 object-cover">
+                            <div class="p-8 space-y-4">
+                                <div>
+                                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Industrial
+                                        & Marine Engineering</span>
+                                    <h3 class="text-2xl font-bold text-brand-navy">INDUSTRIAL & MARINE PROJECTS</h3>
+                                    <p class="text-xs text-slate-500 mt-1">Regional Port & Fabrication Execution</p>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Our broader project experience includes structural fabrication, piping installation,
+                                    mechanical works, marine fabrication and industrial maintenance across Andhra
+                                    Pradesh.
+                                </p>
+                                <div>
+                                    <button onclick="openModal('quoteModal')"
+                                        class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-accent text-white font-bold text-xs px-5 py-3 rounded-xl transition">
+                                        Enquire About Our Capabilities →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 6: FACILITIES & HSE ==================== -->
+        <section id="page-facilities" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Execution
+                        Infrastructure</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">FACILITIES & CAPABILITIES</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Infrastructure Designed for
+                        Industrial Execution.</p>
+                </div>
+            </div>
+
+            <section class="py-16 bg-white space-y-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+                    <p class="text-slate-600 text-base max-w-3xl">
+                        Rajasvi Group's fabrication and workshop infrastructure enables us to support structural steel,
+                        piping, marine and industrial fabrication requirements.
+                    </p>
+
+                    <!-- Waterfront & Workshop Cards -->
+                    <div class="grid md:grid-cols-2 gap-8">
+
+                        <div class="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div
+                                class="w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-water"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-navy">WATERFRONT FABRICATION YARD</h3>
+                            <div
+                                class="inline-block px-3 py-1 bg-blue-100 text-brand-blue font-extrabold text-sm rounded-md">
+                                30,000 Sq. Ft. Facility
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Our waterfront fabrication facility provides dedicated areas for fabrication, assembly
+                                and marine-related project execution.
+                            </p>
+                            <div class="pt-2">
+                                <h4 class="font-bold text-xs uppercase text-brand-navy mb-2">Facility Capabilities:</h4>
+                                <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                    <span>• Structural steel fabrication</span>
+                                    <span>• Marine fabrication</span>
+                                    <span>• Pipe fabrication</span>
+                                    <span>• Assembly & Material handling</span>
+                                    <span>• Surface preparation</span>
+                                    <span>• Project staging</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div
+                                class="w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-fire-burner"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-navy">FABRICATION WORKSHOP</h3>
+                            <div
+                                class="inline-block px-3 py-1 bg-blue-100 text-brand-blue font-extrabold text-sm rounded-md">
+                                Welding & Fabrication Capability
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Our workshop is equipped to support multiple specialized welding and fabrication
+                                processes.
+                            </p>
+                            <div class="pt-2">
+                                <h4 class="font-bold text-xs uppercase text-brand-navy mb-2">Certified Welding
+                                    Processes:</h4>
+                                <div class="space-y-2 text-xs">
+                                    <div class="p-2 bg-white rounded border border-slate-200 flex justify-between">
+                                        <span class="font-bold text-brand-navy">GTAW</span>
+                                        <span class="text-slate-600">Gas Tungsten Arc Welding</span>
+                                    </div>
+                                    <div class="p-2 bg-white rounded border border-slate-200 flex justify-between">
+                                        <span class="font-bold text-brand-navy">SMAW</span>
+                                        <span class="text-slate-600">Shielded Metal Arc Welding</span>
+                                    </div>
+                                    <div class="p-2 bg-white rounded border border-slate-200 flex justify-between">
+                                        <span class="font-bold text-brand-navy">FCAW</span>
+                                        <span class="text-slate-600">Flux-Cored Arc Welding</span>
+                                    </div>
+                                    <div class="p-2 bg-white rounded border border-slate-200 flex justify-between">
+                                        <span class="font-bold text-brand-navy">SAW</span>
+                                        <span class="text-slate-600">Submerged Arc Welding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- PRODUCTION CAPACITY HIGHLIGHT STATS -->
+                    <div class="bg-brand-navy text-white p-10 rounded-2xl shadow-xl">
+                        <h3 class="text-xs font-bold text-brand-blue uppercase tracking-widest text-center mb-6">
+                            PRODUCTION CAPACITY</h3>
+                        <div
+                            class="grid md:grid-cols-2 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+                            <div class="pt-4 md:pt-0">
+                                <div class="text-4xl sm:text-5xl font-extrabold font-heading text-white"
+                                   >60–100 Tons</div>
+                                <div class="text-brand-blue font-bold text-base mt-2">Structural Steel / Month</div>
+                            </div>
+                            <div class="pt-6 md:pt-0">
+                                <div class="text-4xl sm:text-5xl font-extrabold font-heading text-white"
+                                   >2,500 Inch-Dia</div>
+                                <div class="text-brand-blue font-bold text-base mt-2">Pipe Fabrication / Month</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-DIVISION: QUALITY & HSE -->
+                    <div class="pt-12 border-t border-slate-200">
+                        <div class="text-center max-w-3xl mx-auto mb-12">
+                            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Execution
+                                Rigor</span>
+                            <h2 class="text-3xl font-bold text-brand-navy mt-1">QUALITY & HSE</h2>
+                            <p class="text-slate-600 text-lg mt-2 font-semibold">Quality Without Compromise. Safety
+                                Without Exception.</p>
+                            <p class="text-slate-600 text-sm mt-2">
+                                At Rajasvi Group, quality, health, safety and environmental responsibility are
+                                integrated into our project execution methodology. Our objective is straightforward:
+                                Deliver the right quality, safely, efficiently and consistently.
+                            </p>
+                        </div>
+
+                        <!-- QUALITY MANAGEMENT PROCESS -->
+                        <div class="mb-12">
+                            <h3 class="text-xl font-bold text-brand-navy mb-6 text-center">QUALITY MANAGEMENT PROCESS
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-center">
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <span class="font-extrabold text-brand-blue text-xs uppercase">01. PLAN</span>
+                                    <p class="text-xs text-slate-600 mt-2">Review drawings, specifications, materials
+                                        and project requirements.</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <span class="font-extrabold text-brand-blue text-xs uppercase">02. CONTROL</span>
+                                    <p class="text-xs text-slate-600 mt-2">Establish procedures, inspection points and
+                                        execution controls.</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <span class="font-extrabold text-brand-blue text-xs uppercase">03. INSPECT</span>
+                                    <p class="text-xs text-slate-600 mt-2">Monitor fabrication, welding, dimensions,
+                                        surface prep & installation.</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <span class="font-extrabold text-brand-blue text-xs uppercase">04. VERIFY</span>
+                                    <p class="text-xs text-slate-600 mt-2">Confirm compliance with project
+                                        specifications and client requirements.</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <span class="font-extrabold text-brand-blue text-xs uppercase">05. DELIVER</span>
+                                    <p class="text-xs text-slate-600 mt-2">Complete documentation and handover
+                                        requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HEALTH & SAFETY + ENVIRONMENT -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                                <h3 class="text-xl font-bold text-brand-navy mb-3"><i
+                                        class="fa-solid fa-hard-hat text-brand-blue mr-2"></i> HEALTH & SAFETY</h3>
+                                <p class="text-slate-600 text-xs mb-4">Safety is embedded into our planning and daily
+                                    project execution. Key practices include:</p>
+                                <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                    <span>• PPE compliance</span>
+                                    <span>• Toolbox meetings</span>
+                                    <span>• Risk assessment</span>
+                                    <span>• Work permits</span>
+                                    <span>• Safe lifting procedures</span>
+                                    <span>• Welding safety</span>
+                                    <span>• Working-at-height controls</span>
+                                    <span>• Site housekeeping</span>
+                                    <span>• Emergency preparedness</span>
+                                    <span>• Safety training</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                                <h3 class="text-xl font-bold text-brand-navy mb-3"><i
+                                        class="fa-solid fa-leaf text-green-600 mr-2"></i> ENVIRONMENT</h3>
+                                <p class="text-slate-600 text-xs mb-4">Our environmental approach focuses on responsible
+                                    project execution through:</p>
+                                <div class="space-y-2 text-xs text-slate-700">
+                                    <p class="p-2 bg-white rounded border">• Controlled waste management</p>
+                                    <p class="p-2 bg-white rounded border">• Responsible material usage</p>
+                                    <p class="p-2 bg-white rounded border">• Safe handling of industrial materials</p>
+                                    <p class="p-2 bg-white rounded border">• Controlled blasting and painting activities
+                                    </p>
+                                    <p class="p-2 bg-white rounded border">• Workplace environmental practices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-DIVISION: OUR OPERATIONS -->
+                    <div class="pt-12 border-t border-slate-200">
+                        <div class="text-center max-w-3xl mx-auto mb-12">
+                            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Global
+                                Reach</span>
+                            <h2 class="text-3xl font-bold text-brand-navy mt-1">OUR OPERATIONS</h2>
+                            <p class="text-slate-600 mt-2 font-semibold">India. Middle East. Built for Regional
+                                Execution.</p>
+                            <p class="text-slate-600 text-sm mt-2">
+                                Rajasvi Group is developing its presence across key industrial and construction markets
+                                in India and the Middle East.
+                            </p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-3 gap-8">
+
+                            <!-- India Operation -->
+                            <div
+                                class="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <div class="text-xs font-bold text-brand-blue uppercase mb-1">Domestic Hub</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy mb-2">INDIA</h3>
+                                    <p class="text-sm font-bold text-slate-700 mb-3">Kakinada, Andhra Pradesh</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                        Our Indian operations are supported by engineering, fabrication, construction
+                                        and workforce capabilities. The Kakinada location provides a strategic base for
+                                        projects across Andhra Pradesh and surrounding industrial and coastal regions.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                                    <span class="font-bold text-brand-navy block mb-1">Core Capabilities:</span>
+                                    <span>Engineering • Fabrication • Civil Construction • Marine Services • Industrial
+                                        Maintenance • Workforce Solutions</span>
+                                </div>
+                            </div>
+
+                            <!-- Saudi Arabia Operation -->
+                            <div
+                                class="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <div class="text-xs font-bold text-brand-blue uppercase mb-1">Middle East Expansion
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-brand-navy mb-2">SAUDI ARABIA</h3>
+                                    <p class="text-sm font-bold text-slate-700 mb-3">Supporting Industrial Growth Across
+                                        the Kingdom</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                        Rajasvi Group's Saudi operations support the Group's expansion into the Middle
+                                        East, with a focus on industrial, construction, engineering and manpower
+                                        opportunities.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                                    <span class="font-bold text-brand-navy block mb-1">Capabilities:</span>
+                                    <span>Skilled manpower • Industrial services • Engineering support • Fabrication
+                                        support • Construction workforce • Project execution</span>
+                                </div>
+                            </div>
+
+                            <!-- UAE Operation -->
+                            <div
+                                class="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <div class="text-xs font-bold text-brand-blue uppercase mb-1">Regional Gateway</div>
+                                    <h3 class="text-2xl font-bold text-brand-navy mb-2">UNITED ARAB EMIRATES</h3>
+                                    <p class="text-sm font-bold text-slate-700 mb-3">Connecting Indian Capability With
+                                        Gulf Opportunities</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                        Our UAE presence supports business development, project partnerships and
+                                        regional opportunities across engineering, construction and industrial sectors.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                                    <span class="font-bold text-brand-navy block mb-1">Focus:</span>
+                                    <span>Commercial partnerships, regional execution & project management</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 7: CAREERS ==================== -->
+        <section id="page-careers" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Join Our Team</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">CAREERS</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Build Your Future With Rajasvi.
+                    </p>
+                </div>
+            </div>
+
+            <section class="py-16 bg-white space-y-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+                    <div class="max-w-3xl space-y-4">
+                        <p class="text-slate-700 text-lg leading-relaxed">
+                            Rajasvi Group is building a workforce capable of delivering increasingly complex engineering
+                            and construction projects across India and international markets.
+                        </p>
+                        <p class="text-slate-600">
+                            We look for people who bring technical capability, discipline, adaptability and a commitment
+                            to safety and quality.
+                        </p>
+                    </div>
+
+                    <!-- OPPORTUNITIES GRID -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-brand-navy mb-6">Open Career Opportunities</h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Civil Engineers</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Mechanical Engineers</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Fabrication Engineers</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Welders</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Fabricators</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Pipe Fitters</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Mechanical Fitters</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Riggers</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Electricians</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Painters</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Technicians</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center">
+                                <span class="font-bold text-slate-800 text-sm">Supervisors</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                            <div
+                                class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-brand-accent transition flex justify-between items-center col-span-2 sm:col-span-1">
+                                <span class="font-bold text-slate-800 text-sm">Project Managers</span>
+                                <button onclick="openModal('careerModal')"
+                                    class="text-brand-blue text-xs font-bold hover:underline">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LIFE AT RAJASVI -->
+                    <div class="bg-brand-navy text-white p-10 rounded-2xl">
+                        <h2 class="text-2xl font-bold font-heading mb-4">LIFE AT RAJASVI</h2>
+                        <div class="flex flex-wrap gap-4">
+                            <span
+                                class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-semibold text-brand-blue"><i
+                                    class="fa-solid fa-shield-halved mr-2"></i> Safety First</span>
+                            <span
+                                class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-semibold text-brand-blue"><i
+                                    class="fa-solid fa-graduation-cap mr-2"></i> Continuous Learning</span>
+                            <span
+                                class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-semibold text-brand-blue"><i
+                                    class="fa-solid fa-chart-line mr-2"></i> Professional Growth</span>
+                            <span
+                                class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-semibold text-brand-blue"><i
+                                    class="fa-solid fa-people-group mr-2"></i> Teamwork</span>
+                            <span
+                                class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-semibold text-brand-blue"><i
+                                    class="fa-solid fa-award mr-2"></i> Technical Excellence</span>
+                        </div>
+                        <div class="mt-8">
+                            <button onclick="openModal('careerModal')"
+                                class="bg-brand-accent hover:bg-blue-600 text-white font-bold px-6 py-3 rounded-xl transition">
+                                Submit General Resume
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+
+        <!-- ==================== PAGE 8: CONTACT ==================== -->
+        <section id="page-contact" class="page-view">
+
+            <div class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Get In Touch</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading mt-2">LET'S BUILD TOGETHER</h1>
+                    <p class="text-slate-300 text-xl mt-3 font-semibold text-blue-400">Talk to Our Engineering & Project
+                        Team.</p>
+                </div>
+            </div>
+
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-12 gap-12">
+
+                        <!-- Contact Form -->
+                        <div
+                            class="lg:col-span-7 bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-sm">
+                            <h2 class="text-2xl font-bold text-brand-navy mb-2">Send Us a Message</h2>
+                            <p class="text-slate-600 text-sm mb-6">Whether you are planning an industrial project,
+                                structural steel requirement, piping installation, marine repair, infrastructure project
+                                or manpower deployment, our team is ready to understand your requirements.</p>
+
+                            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name
+                                            *</label>
+                                        <input type="text" required placeholder="John Doe"
+                                            class="w-full bg-white border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email
+                                            Address *</label>
+                                        <input type="email" required placeholder="john@company.com"
+                                            class="w-full bg-white border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone
+                                            Number</label>
+                                        <input type="tel" placeholder="+91 98765 43210"
+                                            class="w-full bg-white border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Inquiry
+                                            Topic *</label>
+                                        <select required
+                                            class="w-full bg-white border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent focus:outline-none">
+                                            <option value="">Select Topic</option>
+                                            <option value="steel">Structural Steel / Piping Fabrication</option>
+                                            <option value="civil">Civil & Infrastructure Project</option>
+                                            <option value="marine">Marine Engineering & Shipbuilding</option>
+                                            <option value="manpower">Workforce & Manpower Request</option>
+                                            <option value="general">General Corporate Inquiry</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Project Details
+                                        / Message *</label>
+                                    <textarea required rows="4"
+                                        placeholder="Briefly describe your scope, specifications, or inquiry..."
+                                        class="w-full bg-white border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent focus:outline-none"></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-brand-navy hover:bg-brand-accent text-white font-bold py-4 rounded-xl shadow-md transition duration-300">
+                                    Submit Inquiry
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Office Locations -->
+                        <div class="lg:col-span-5 space-y-8">
+
+                            <!-- INDIA OFFICE -->
+                            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                                <div
+                                    class="inline-block px-3 py-1 bg-blue-100 text-brand-blue font-extrabold text-xs rounded uppercase">
+                                    Corporate Headquarters
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy">INDIA OFFICE</h3>
+                                <div class="text-sm text-slate-600 space-y-2">
+                                    <p class="flex items-start gap-2">
+                                        <i class="fa-solid fa-building text-brand-blue mt-1"></i>
+                                        <span>Rajasvee Mansion, 1-230/1A, Kakinada, Andhra Pradesh, India</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-phone text-brand-blue"></i>
+                                        <span>+91 96661 66559 / +91 98496 94419</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-envelope text-brand-blue"></i>
+                                        <span>rajasvi.ec@gmail.com</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- MIDDLE EAST OPERATIONS -->
+                            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                                <div
+                                    class="inline-block px-3 py-1 bg-blue-100 text-brand-blue font-extrabold text-xs rounded uppercase">
+                                    Regional Hub
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy">MIDDLE EAST OPERATIONS</h3>
+                                <div class="text-sm text-slate-600 space-y-2">
+                                    <p class="flex items-start gap-2">
+                                        <i class="fa-solid fa-earth-amber text-brand-blue mt-1"></i>
+                                        <span>Saudi Arabia & United Arab Emirates</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-phone text-brand-blue"></i>
+                                        <span>+966 50 225 6891</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-envelope text-brand-blue"></i>
+                                        <span>sales@rajasvigroup.com / md@rajasvigroup.com</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL 1: DISCUSS PROJECT / QUOTE MODAL -->
+    <div id="quoteModal"
+        class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div
+            class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl relative border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('quoteModal')"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-brand-navy mb-1">Discuss Your Project</h3>
+            <p class="text-xs text-slate-500 mb-6">Provide your specifications and engineering team will reach out
+                directly.</p>
+
+            <form onsubmit="handleModalSubmit(event, 'quoteModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
+                    <input type="text" required
+                        class="w-full border rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Company Name</label>
+                    <input type="text"
+                        class="w-full border rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email / Phone *</label>
+                    <input type="text" required
+                        class="w-full border rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Project Requirements *</label>
+                    <textarea required rows="3"
+                        class="w-full border rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-accent"
+                        placeholder="Structural steel tonnage, piping specs, or marine repair location..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-brand-navy hover:bg-brand-accent text-white font-bold py-3.5 rounded-xl transition">
+                    Send Project Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CAREER APPLICATION MODAL -->
+    <div id="careerModal"
+        class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl relative border border-slate-200">
+            <button onclick="closeModal('careerModal')"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-brand-navy mb-1">Apply For Position</h3>
+            <p class="text-xs text-slate-500 mb-6">Join the Rajasvi Group engineering team.</p>
+
+            <form onsubmit="handleModalSubmit(event, 'careerModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
+                    <input type="text" required class="w-full border rounded-xl p-3 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Target Position *</label>
+                    <input type="text" required placeholder="e.g. Fabrication Engineer, Welder"
+                        class="w-full border rounded-xl p-3 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp *</label>
+                    <input type="tel" required class="w-full border rounded-xl p-3 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Years of Industry
+                        Experience</label>
+                    <input type="text" placeholder="e.g. 5 Years" class="w-full border rounded-xl p-3 text-sm">
+                </div>
+                <button type="submit"
+                    class="w-full bg-brand-accent hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl transition">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+
+                <!-- Brand Info -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-accent rounded-lg p-1.5 flex items-center justify-center">
+                            <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 25 H55 C65 25 72 32 72 40 C72 48 65 55 55 55 H20 V25 Z"
+                                    stroke="currentColor" stroke-width="8" />
+                                <path d="M40 55 L68 80" stroke="currentColor" stroke-width="9" />
+                                <path d="M80 35 V75 C80 82 72 85 60 85 H45 C35 85 25 78 25 65" stroke="currentColor"
+                                    stroke-width="8" />
+                                <path d="M60 60 H80" stroke="currentColor" stroke-width="8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-heading font-extrabold text-xl text-white">RAJASVI GROUP</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Multidisciplinary engineering and construction company delivering integrated solutions across
+                        structural steel fabrication, industrial infrastructure, piping systems, marine engineering,
+                        civil construction and workforce solutions.
+                    </p>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><button onclick="navigateTo('home')" class="hover:text-brand-blue transition">Home
+                                Page</button></li>
+                        <li><button onclick="navigateTo('about')" class="hover:text-brand-blue transition">About
+                                Corporate Profile</button></li>
+                        <li><button onclick="navigateTo('business')" class="hover:text-brand-blue transition">Our
+                                Business Verticals</button></li>
+                        <li><button onclick="navigateTo('services')"
+                                class="hover:text-brand-blue transition">Engineering Services</button></li>
+                        <li><button onclick="navigateTo('projects')" class="hover:text-brand-blue transition">Case
+                                Studies & Projects</button></li>
+                        <li><button onclick="navigateTo('facilities')"
+                                class="hover:text-brand-blue transition">Facilities & Quality HSE</button></li>
+                        <li><button onclick="navigateTo('careers')" class="hover:text-brand-blue transition">Careers
+                                Opportunities</button></li>
+                        <li><button onclick="navigateTo('contact')" class="hover:text-brand-blue transition">Contact
+                                Offices</button></li>
+                    </ul>
+                </div>
+
+                <!-- Office Contact Info -->
+                <div class="lg:col-span-5 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Contact Address</h4>
+                    <div class="text-xs text-slate-400 space-y-2">
+                        <p><strong class="text-white">India HQ:</strong> Rajasvee Mansion, 1-230/1A, Kakinada, Andhra
+                            Pradesh, India</p>
+                        <p><strong class="text-white">Phones:</strong> +91 96661 66559 | +91 98496 94419</p>
+                        <p><strong class="text-white">Middle East:</strong> Saudi Arabia & UAE (+966 50 225 6891)</p>
+                        <p><strong class="text-white">Emails:</strong> rajasvi.ec@gmail.com | sales@rajasvigroup.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Rajasvi Group. All Rights Reserved. Engineering & Execution Excellence.</p>
+                <div class="flex gap-4">
+                    <a href="#privacy"
+                        onclick="event.preventDefault(); showToast('Privacy Policy details available on request.')"
+                        class="hover:underline">Privacy Policy</a>
+                    <a href="#terms"
+                        onclick="event.preventDefault(); showToast('Terms of Execution available on request.')"
+                        class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Element -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 bg-brand-navy text-white text-sm font-semibold px-6 py-3.5 rounded-xl shadow-2xl z-50 border border-brand-accent flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+        <span id="toastMsg">Inquiry Submitted Successfully!</span>
+    </div>
+
+    <!-- JAVASCRIPT ROUTER AND INTERACTIVITY LOGIC -->
+    <script>
+        
+        // Single Page Router Function
+        function navigateTo(pageId) {
+            // Hide all page views
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => {
+                view.classList.remove('active');
+            });
+
+            // Show selected page view
+            const targetView = document.getElementById('page-' + pageId);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+
+            // Update Nav link styles
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('text-brand-accent', 'bg-slate-100');
+            });
+            const activeBtn = document.getElementById('nav-' + pageId);
+            if (activeBtn) {
+                activeBtn.classList.add('text-brand-accent', 'bg-slate-100');
+            }
+
+            // Close mobile menu if open
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer) {
+                drawer.classList.add('hidden');
+            }
+
+            // Update window location hash without scrolling jump
+            history.pushState(null, null, '#' + pageId);
+
+            // Smooth scroll to top of page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Section 03 Business Interactive Switcher
+        function switchHomeBusinessTab(tabKey) {
+            // Hide all content blocks
+            const contents = document.querySelectorAll('.home-biz-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Show active content
+            const activeContent = document.getElementById('biz-content-' + tabKey);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+
+            // Update Desktop buttons
+            const buttons = document.querySelectorAll('.biz-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-navy', 'text-white', 'shadow');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            const activeBtn = document.getElementById('tab-btn-' + tabKey);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-700');
+                activeBtn.classList.add('bg-brand-navy', 'text-white', 'shadow');
+            }
+
+            // Sync Mobile Dropdown
+            const dropdown = document.getElementById('businessDropdown');
+            if (dropdown) {
+                dropdown.value = tabKey;
+            }
+        }
+
+
+        // Modal Handlers
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Form Submit Handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Your inquiry has been submitted to Rajasvi Group.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e, modalId) {
+            e.preventDefault();
+            closeModal(modalId);
+            showToast('Request received! Our team will get back to you shortly.');
+            e.target.reset();
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Window load & hash routing setup
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById('page-' + hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById('page-' + hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
