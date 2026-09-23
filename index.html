@@ -725,6 +725,108 @@
                         </p>
                     </div>
 
+                    <!-- 360° Interactive Ecosystem Pie Chart Showcase -->
+                    <div class="my-12 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl relative overflow-hidden">
+                        <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div class="grid lg:grid-cols-12 gap-8 items-center">
+                            <!-- Left: Animated 360° Donut / Pie Chart -->
+                            <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                                <div class="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center group">
+                                    <svg viewBox="0 0 200 200" class="w-full h-full transform -rotate-90 drop-shadow-md">
+                                        <!-- Slice 1: Group Companies (4 entities = 57.1% = 251.3 stroke-dasharray) -->
+                                        <circle cx="100" cy="100" r="70" fill="transparent" stroke="#0284c7" stroke-width="26"
+                                            stroke-dasharray="251.3 439.8" stroke-dashoffset="0"
+                                            class="pie-slice cursor-pointer transition-all duration-300 hover:opacity-85 hover:stroke-width-[30]"
+                                            onclick="openEntityModal('group')">
+                                        </circle>
+
+                                        <!-- Slice 2: Overseas Associations (2 entities = 28.6% = 125.6 stroke-dasharray) -->
+                                        <circle cx="100" cy="100" r="70" fill="transparent" stroke="#10b981" stroke-width="26"
+                                            stroke-dasharray="125.6 439.8" stroke-dashoffset="-255.3"
+                                            class="pie-slice cursor-pointer transition-all duration-300 hover:opacity-85 hover:stroke-width-[30]"
+                                            onclick="openEntityModal('overseas')">
+                                        </circle>
+
+                                        <!-- Slice 3: Associate Companies (1 entity = 14.3% = 62.8 stroke-dasharray) -->
+                                        <circle cx="100" cy="100" r="70" fill="transparent" stroke="#f59e0b" stroke-width="26"
+                                            stroke-dasharray="62.8 439.8" stroke-dashoffset="-384.9"
+                                            class="pie-slice cursor-pointer transition-all duration-300 hover:opacity-85 hover:stroke-width-[30]"
+                                            onclick="openEntityModal('associate')">
+                                        </circle>
+                                    </svg>
+
+                                    <!-- Center Donut Content -->
+                                    <div class="absolute inset-0 m-auto w-32 h-32 bg-white rounded-full border border-slate-100 shadow-inner flex flex-col items-center justify-center text-center p-2 pointer-events-none">
+                                        <span class="text-3xl font-extrabold text-brand-navy font-heading leading-none">7</span>
+                                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Total Entities</span>
+                                        <span class="text-[10px] text-brand-blue font-semibold mt-0.5">Global Network</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-4 text-center font-semibold">
+                                    <i class="fa-solid fa-hand-pointer text-brand-blue mr-1 animate-bounce"></i> Click 360° segments to trigger entity pop-up
+                                </p>
+                            </div>
+
+                            <!-- Right: Legend & Category Breakdown -->
+                            <div class="lg:col-span-7 space-y-4">
+                                <h3 class="text-xl font-bold text-brand-navy border-b border-slate-100 pb-3 flex items-center justify-between">
+                                    <span>Ecosystem Breakdown</span>
+                                    <span class="text-xs text-slate-500 font-normal">360° Entity Share</span>
+                                </h3>
+
+                                <!-- Legend 1: Group Companies -->
+                                <div onclick="openEntityModal('group')"
+                                    class="p-4 rounded-xl border border-slate-200/80 hover:border-brand-blue bg-slate-50/50 hover:bg-blue-50/40 transition duration-300 cursor-pointer flex items-center justify-between group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-4 h-4 rounded-full bg-sky-600 shadow-sm shrink-0"></span>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-brand-navy group-hover:text-brand-blue transition">Group Companies</h4>
+                                            <p class="text-xs text-slate-500">Core engineering, marine, construction & trading divisions</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-base font-extrabold text-brand-navy">4 Entities</span>
+                                        <span class="text-xs text-slate-400 block">57.1%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Legend 2: Overseas Associations -->
+                                <div onclick="openEntityModal('overseas')"
+                                    class="p-4 rounded-xl border border-slate-200/80 hover:border-emerald-500 bg-slate-50/50 hover:bg-emerald-50/40 transition duration-300 cursor-pointer flex items-center justify-between group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-4 h-4 rounded-full bg-emerald-500 shadow-sm shrink-0"></span>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-brand-navy group-hover:text-emerald-600 transition">Overseas Associations</h4>
+                                            <p class="text-xs text-slate-500">Abu Dhabi (UAE) & Dammam (Saudi Arabia) operations</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-base font-extrabold text-brand-navy">2 Entities</span>
+                                        <span class="text-xs text-slate-400 block">28.6%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Legend 3: Associate Companies -->
+                                <div onclick="openEntityModal('associate')"
+                                    class="p-4 rounded-xl border border-slate-200/80 hover:border-amber-500 bg-slate-50/50 hover:bg-amber-50/40 transition duration-300 cursor-pointer flex items-center justify-between group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-4 h-4 rounded-full bg-amber-500 shadow-sm shrink-0"></span>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-brand-navy group-hover:text-amber-600 transition">Associate Companies</h4>
+                                            <p class="text-xs text-slate-500">Safety testing, LSA & FFA marine inspection services</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-base font-extrabold text-brand-navy">1 Entity</span>
+                                        <span class="text-xs text-slate-400 block">14.3%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Category Filter Tabs -->
                     <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
                         <button onclick="filterGroupEntities('all')" id="entity-tab-all"
@@ -3205,6 +3307,104 @@
         });
     </script>
 
+
+    <!-- Entity Pop-up Modal -->
+    <div id="entityModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative transform transition-all duration-300 scale-95 opacity-0" id="entityModalContent">
+            <button onclick="closeEntityModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-lg transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="entityModalBody">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const entityData = {
+            group: {
+                title: "Group Companies",
+                badge: "Core Divisions (4 Entities)",
+                color: "bg-sky-50 text-brand-blue border-blue-200",
+                entities: [
+                    { name: "Kranthi Integrated Solutions", spec: "Ship Construction & Maintenance", desc: "Specializes in ship construction, repair, maintenance, and marine engineering services." },
+                    { name: "Laxmi Engineering Mechanical Solutions", spec: "Fabrication Solutions", desc: "Provides precision mechanical fabrication and engineering solutions for industrial applications." },
+                    { name: "Rajasvi E&C", spec: "Engineering & Construction", desc: "Delivers comprehensive engineering and construction solutions across industrial and infrastructure projects." },
+                    { name: "Rajasvi Edible Enterprises", spec: "Edibles Trading", desc: "Engaged in the sourcing, trading, and supply of edible products across established markets." }
+                ]
+            },
+            overseas: {
+                title: "Overseas Associations",
+                badge: "International (2 Entities)",
+                color: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                entities: [
+                    { name: "Deep Ocean Marine Equipment", spec: "Abu Dhabi, UAE", desc: "Provides marine equipment, technical products, and support services to the maritime industry." },
+                    { name: "Pivotal Resources Limited Company", spec: "Dammam, KSA", desc: "Supports industrial, engineering, and resource-related requirements across the Saudi Arabian market." }
+                ]
+            },
+            associate: {
+                title: "Associate Companies",
+                badge: "Domestic Safety Inspection (1 Entity)",
+                color: "bg-amber-50 text-amber-700 border-amber-200",
+                entities: [
+                    { name: "Sri Venkateswara Marine Services", spec: "LSA & FFA Testing", desc: "Specializes in testing and inspection of Life-Saving Appliances (LSA) and Fire-Fighting Appliances (FFA)." }
+                ]
+            }
+        };
+
+        function openEntityModal(type) {
+            const data = entityData[type];
+            if (!data) return;
+
+            let html = `
+                <div class="mb-6">
+                    <span class="text-xs font-bold px-3 py-1 rounded-full border ${data.color}">${data.badge}</span>
+                    <h3 class="text-2xl font-bold text-brand-navy mt-3">${data.title}</h3>
+                </div>
+                <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+            `;
+
+            data.entities.forEach(item => {
+                html += `
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-base">${item.name}</h4>
+                            <span class="text-xs font-semibold text-brand-accent px-2 py-0.5 bg-blue-50 rounded border border-blue-100">${item.spec}</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${item.desc}</p>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+
+            document.getElementById('entityModalBody').innerHTML = html;
+            const modal = document.getElementById('entityModal');
+            const modalContent = document.getElementById('entityModalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            if (typeof filterGroupEntities === 'function') {
+                filterGroupEntities(type);
+            }
+        }
+
+        function closeEntityModal() {
+            const modal = document.getElementById('entityModal');
+            const modalContent = document.getElementById('entityModalContent');
+            if (!modalContent) return;
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+    </script>
 </body>
 
 </html>
