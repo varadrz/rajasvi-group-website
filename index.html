@@ -222,6 +222,21 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+    
+        /* Infinite Right-to-Left Logo Marquee */
+        @keyframes marqueeRTL {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .logo-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeRTL 30s linear infinite;
+        }
+        .logo-marquee-track:hover {
+            animation-play-state: paused;
+        }
+    
     </style>
 </head>
 
@@ -666,44 +681,83 @@
                         </div>
 
                         <!-- Client Logo Grid with Hover Scale & Elevation -->
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/1.png" alt="Client Logo 1" class="max-h-16 max-w-full object-contain">
+                                                <!-- Continuous Right to Left Infinite Logo Marquee -->
+                        <div class="overflow-hidden w-full relative py-4 mask-gradient">
+                            <div class="logo-marquee-track">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/1.png" alt="Client Logo 1" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/2.png" alt="Client Logo 2" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/2.png" alt="Client Logo 2" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/3.png" alt="Client Logo 3" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/3.png" alt="Client Logo 3" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/4.png" alt="Client Logo 4" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/4.png" alt="Client Logo 4" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/5.png" alt="Client Logo 5" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/5.png" alt="Client Logo 5" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/6.png" alt="Client Logo 6" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/6.png" alt="Client Logo 6" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/7.png" alt="Client Logo 7" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/7.png" alt="Client Logo 7" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/8.png" alt="Client Logo 8" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/8.png" alt="Client Logo 8" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/9.png" alt="Client Logo 9" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/9.png" alt="Client Logo 9" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/10.png" alt="Client Logo 10" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/10.png" alt="Client Logo 10" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/11.png" alt="Client Logo 11" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/11.png" alt="Client Logo 11" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center h-24">
-                                <img src="clients/12.png" alt="Client Logo 12" class="max-h-16 max-w-full object-contain">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/12.png" alt="Client Logo 12" class="max-h-24 max-w-[180px] object-contain">
                             </div>
-                        </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/1.png" alt="Client Logo 1" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/2.png" alt="Client Logo 2" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/3.png" alt="Client Logo 3" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/4.png" alt="Client Logo 4" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/5.png" alt="Client Logo 5" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/6.png" alt="Client Logo 6" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/7.png" alt="Client Logo 7" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/8.png" alt="Client Logo 8" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/9.png" alt="Client Logo 9" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/10.png" alt="Client Logo 10" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/11.png" alt="Client Logo 11" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center h-32 w-56 mx-3 shrink-0">
+                                <img src="clients/12.png" alt="Client Logo 12" class="max-h-24 max-w-[180px] object-contain">
+                            </div>
+                            </div>
+                        </div></div>
                     </div>
 
                 </div>
